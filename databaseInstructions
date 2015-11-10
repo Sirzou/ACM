@@ -1,16 +1,15 @@
-
 CREATE DATABASE acm_development;
 CREATE DATABASE acm_test;
 CREATE DATABASE acm_production;
 
-  development:
+development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
   database: acm_development
   pool: 5
-  username: tu_usuario
-  password: tu_contrasena
+  username: 
+  password: 
   host: 127.0.0.1
 test:
   adapter: mysql2
@@ -18,8 +17,8 @@ test:
   reconnect: false
   database: acm_test
   pool: 5
-  username: tu_usuario
-  password: tu_contrasena
+  username: 
+  password: 
   host: 127.0.0.1
 production
   adapter: mysql2
@@ -27,8 +26,8 @@ production
   reconnect: false
   database: acm_production
   pool: 5
-  username: tu_usuario
-  password: tu_contrasena
+  username: 
+  password: 
   host: 127.0.0.1
 
 @persona = Persona.new({
@@ -70,3 +69,34 @@ end
 
 
 
+
+class cEmpresa begin 
+   metodo newEnterprise()begin
+      <%= vEmpresa # newEnterprise %>
+   end
+end
+
+class vEmpresa begin
+   @nombre
+   @motivo
+   @fechaI
+   metodo verEnterprise(nombre,motivo,fechaI)begin
+      @nombre=@empresa.nombre
+      @motivo=@empresa.motivo
+      @fechaI=@empresa.fechaI  
+   end
+   metodo newEnterprise(nombre,motivo,fechaI)begin
+     verEnterprise(@nombre,@motivo,@fechaI);
+   end
+end
+
+class vPerfil begin
+   metodo verEnterprise(nombre,motivo,fechaI)
+      @nombre=persona.nombre;
+      @universidad=persona.universidad;
+      @profesion=persona.profesion;
+      @underG=persona.underG;
+      @tiempoE=persona.tiempoE;
+      @descripcion=persona.descripción;
+   end
+end
