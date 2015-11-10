@@ -1,0 +1,72 @@
+
+CREATE DATABASE acm_development;
+CREATE DATABASE acm_test;
+CREATE DATABASE acm_production;
+
+  development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: acm_development
+  pool: 5
+  username: tu_usuario
+  password: tu_contrasena
+  host: 127.0.0.1
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: acm_test
+  pool: 5
+  username: tu_usuario
+  password: tu_contrasena
+  host: 127.0.0.1
+production
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: acm_production
+  pool: 5
+  username: tu_usuario
+  password: tu_contrasena
+  host: 127.0.0.1
+
+@persona = Persona.new({
+   :nombre => "",
+   :universidad => "",
+   :profesion => "",
+   :underG => "",
+   :universidad => "IdUniversidad",
+   :tiempoE => "",
+   :descripcín => ""});
+@persona.save();
+
+
+@empresa = Empresa.new({
+   :Nombre => "",
+   :Motivo => "",
+   :FechaI => ""});
+@empresa.save();
+
+
+@universidad = Universidad.new({
+   :nombre => "",
+   :capmus => "",
+   :ofertaA => "IdOferta"});//???
+@universidad.save();
+
+
+
+class Persona < ActiveRecord::Base
+   has_one :universidad
+   has_and_belongs_to_many :empresas
+   belongs to 
+end
+
+class Empresa < ActiveRecord::Base
+   has_many :personas
+   has_and_belongs_to_many :personas
+end
+
+
+
